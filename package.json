@@ -37,7 +37,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@vaadin/router": "^1.7.4",
+    "axios": "^0.27.2",
+    "lit": "^2.2.3"
+  },
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
