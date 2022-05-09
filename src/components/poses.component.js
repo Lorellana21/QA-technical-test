@@ -19,6 +19,7 @@ export class PosesComponent extends LitElement {
         const allPosesUseCase = new AllPosesUseCase();
         this.poses = await allPosesUseCase.execute();
     }
+    
 
     async allOdds() {
         const oddPosesUseCase = new OddPosesUseCase();
