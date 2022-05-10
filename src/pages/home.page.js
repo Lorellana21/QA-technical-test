@@ -1,3 +1,6 @@
+import '../ui/title.ui';
+
+
 export class HomePage extends HTMLElement {
 
     constructor() {
@@ -6,8 +9,9 @@ export class HomePage extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-            <h1>Vanilla</h1>
-            <app-element hello="Hola Pablo"><p>¿Qué se va a mostrar?</p></app-element>
+            <title-ui title="Yoga Wizard">
+            <p>yoga session planner</p>
+            </title-ui>
         `;
     }
 

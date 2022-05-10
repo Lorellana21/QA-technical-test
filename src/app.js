@@ -2,20 +2,7 @@ import { css, html, LitElement } from "lit";
 
 export class AppElement extends LitElement {
 
-    static get styles() {
-        return css`
-            :host {
-                display: block;
-                border: black solid 2px;
-            }
-            p {
-                color: var(--color-poc, green)
-            }
-            ::slotted(p) {
-                color: red;
-            }
-        `
-    }
+    
 
     static get properties() {
         return {
@@ -51,7 +38,3 @@ export class AppElement extends LitElement {
 }
 
 customElements.define('app-element', AppElement);
-
-customElements.whenDefined("app-element").then(() => {
-    console.log("AppElement ha sido definido");
-  });
