@@ -1,4 +1,5 @@
 import '../components/poses.component';
+import "../ui/header.ui";
 
 export class PosesPage extends HTMLElement {
 
@@ -8,8 +9,9 @@ export class PosesPage extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
+            
+            <header-ui></header-ui>
             <h1>Poses Page</h1>
-            <genk-poses></genk-poses>
         `;
     }
 
