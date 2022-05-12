@@ -6,7 +6,14 @@ const outlet = document.querySelector('#outlet');
 const router = new Router(outlet);
 
 router.setRoutes([
-    { path: '/', component: 'home-page' },
-    { path: '/poses', component: 'poses-page'},
-    { path: '(.*)', redirect: '/' }
+    { 
+        path: '/', 
+        component: 'home-page' 
+    },
+    { 
+        path: '/poses',
+        component: 'poses-page'
+    },
+    { 
+        path: '(.*)', redirect: '/' }
 ])
