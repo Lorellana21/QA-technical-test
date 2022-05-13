@@ -15,7 +15,7 @@ export class HomePage extends LitElement {
     super();
     this.title = "Yoga Wizard";
     this.subtitle = "creating my yoga session";
-    this.textButton = "Start";
+    this.textButton = "Go";
   }
 
   static get styles() {

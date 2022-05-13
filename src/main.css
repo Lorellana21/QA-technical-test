@@ -125,7 +125,7 @@ header nav ul {
     top: 10px;
     right: 25px;
     width: 180px;
-    height: 100vh;
+    height: 20vh;
     gap: 0rem;
     background: var(--color-secondary);
     transition: transform 0.3s ease-in-out;
@@ -137,6 +137,7 @@ header nav ul {
   }
   header nav ul li{
     margin-top: 2.5rem;
+    font-size: 1.5rem;
     /* color: var(--color-primary); */
   }
 }

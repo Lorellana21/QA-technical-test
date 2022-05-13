@@ -17,7 +17,7 @@ export class PosesPage extends HTMLElement {
             
             
             <h1>Poses Page</h1>
-            <p>hola</p>
+          
         
         `;
   }
