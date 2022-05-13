@@ -1,6 +1,7 @@
 import { html, css, LitElement } from "lit";
 
 
+
 export class HomePage extends LitElement {
   static get properties() {
     return {
@@ -139,6 +140,7 @@ export class HomePage extends LitElement {
 
   render() {
     return html`
+    
         <section class="namaste">
           <h1 class="title">${this.title}</h1>
           <p class="subtitle">${this.subtitle}</p>

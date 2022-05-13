@@ -8,6 +8,7 @@
     ============*/
     --size-title: 3rem;
     --size-subtitle: 2rem;
+    --size-links-pages: 1.5rem;
     /*=====
     Fonts
     =====*/
@@ -53,17 +54,17 @@ html {
   font-family: var(--font-titles);
   background-image: url("https://p18.zdusercontent.com/attachment/261010/Xb79fDHoaVlT8MjDYdBmXIH9k?token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..HzoVeH0FwMiW6JKocWKoag.RxdIDABxDKyXgT2_TSHlsgaMtLWPlS6J4k26EI6x8SQpQkwMtn_Bmf9G55-LMZjP8BeOwX0Auahl8cZTYCgniyMIvDrSXt_wIqQv7-_6zMYEbl1v6CsKnEhNTeSWM9zSHEfGJ-8sOAQcjMMViWS0AOQLabVPy2aoo3Tbvt4jB62Z56na3_VbWDvs4yKc9AL1nmBwlLUz45YVYe0AQRCcg2GNLYk43qXSlUPolcU5HQpj2DJXbAemS7LpGom1Z4rMmuX5cZJ6_mgN49Ujx6_5m0Ja72oWFon_C6VdwwLPO6Y.hVhI8o0feeL4XcvEwtJ3yw");
   background-repeat: no-repeat;
-  /*background-position: top;*/
+  background-position: top;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: fixed; 
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: start;
   min-height: 100vh;
   overflow-x: hidden;
-  /* background-color: var(--color-bg);
-    color: var(--color-fg); */
+  /* background-color: var(--color-bg); */
+  /*color: var(--color-fg);*/
 }
 
 .container {
@@ -86,11 +87,14 @@ header nav {
   margin: 20px auto;
 }
 header nav ul {
+  font-size: var(--size-links-pages);
+  /* color: var(--color-primary); */
+  box-shadow: 10px 5px 5px white;
   display: flex;
-  flex-flow: row wrap;
-  gap: 1rem;
+  flex-flow: row-reverse;
+  gap: 1.5rem;
   align-items: center;
-  width: 400px;
+  width: 300px;
   list-style: none;
   cursor: pointer;
   position: relative;
@@ -105,27 +109,35 @@ header nav ul {
   margin: 4px;
 }
 .burguer .bar {
-  background: white;
+  background-color: white;
   width: 40px;
   height: 3px;
   border-radius: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   .burguer {
     display: block;
   }
   header nav ul {
-    flex-flow: column;
+    flex-flow: column wrap;
     position: absolute;
-    top: 30px;
-    right: 0px;
-    width: 200px;
-    height: 6vh;
+    top: 10px;
+    right: 25px;
+    width: 180px;
+    height: 100vh;
+    gap: 0rem;
     background: var(--color-secondary);
     transition: transform 0.3s ease-in-out;
-    border-radius: 10px;
-    transform: translateX(100%);
+    border-radius: 5em;
+    border: 2px solid white;
+    box-shadow: none;
+    transform: translateX(150%);
+    
+  }
+  header nav ul li{
+    margin-top: 2.5rem;
+    /* color: var(--color-primary); */
   }
 }
 .open {
