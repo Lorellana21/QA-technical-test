@@ -2,7 +2,10 @@
 import "./main.css";
 import './router';
 import "./pages/home.page";
-import "./ui/header.ui";
+// import img from './file.png';
+//import "./ui/header.ui";
+
+
 
 
     const burguer = document.querySelector(".burguer");

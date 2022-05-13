@@ -1,20 +1,26 @@
-import '../components/poses.component';
-import "../ui/header.ui";
+import "../components/poses.component";
 
 export class PosesPage extends HTMLElement {
+  constructor() {
+    super();
+  }
+  static get styles() {
+    return css`
+      
 
-    constructor() {
-        super();
-    }
+    `;
+  }
 
-    connectedCallback() {
-        this.innerHTML = `
+  connectedCallback() {
+    this.innerHTML = `
             
-            <header-ui></header-ui>
+            
+            
             <h1>Poses Page</h1>
+            <p>hola</p>
+        
         `;
-    }
-
+  }
 }
 
-customElements.define('poses-page', PosesPage);
+customElements.define("poses-page", PosesPage);

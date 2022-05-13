@@ -1,4 +1,4 @@
-import { css, html, LitElement } from "lit";
+import { css, html, LitElement } from "lit-element";
 
 export class HeaderUI extends LitElement {
 
@@ -34,24 +34,13 @@ export class HeaderUI extends LitElement {
       .burguer div {
         margin: 4px;
       }
-      .burguer .top-bar {
+      .burguer .bar {
         background: white;
         width: 40px;
         height: 3px;
         border-radius: 5px;
       }
-      .burguer .middle-bar {
-        background: white;
-        width: 40px;
-        height: 3px;
-        border-radius: 5px;
-      }
-      .burguer .bottom-bar {
-        background: white;
-        width: 40px;
-        height: 3px;
-        border-radius: 5px;
-      }
+      
       @media (max-width: 800px) {
         .burguer {
           display: block;
@@ -75,49 +64,45 @@ export class HeaderUI extends LitElement {
     `;
   }
 
-  static get properties() {
-    return {
-      link1: { type: String },
-      link2: { type: String },
-    };
-  }
+  // static get properties() {
+  //   return {
+  //     link1: { type: String },
+  //     link2: { type: String },
+  //   };
+  // }
 
-  constructor() {
-    super();
-    this.link1 = "Namasté";
-    this.link2 = "Yoga session";
-  }
+  // constructor() {
+  //   super();
+  //   this.link1 = "Namasté";
+  //   this.link2 = "Yoga session";
+  // }
   
-
+// open(){
   
+//   const menu = this.querySelector("header nav ul");
+  
+//   burguer.addEventListener("click", function(){
+//       menu.classList.toggle("open");
+//   })
 
-  connectedCallback() {
-      super.connectedCallback();
-    const burguer = document.querySelector(".burguer");
-const menu = document.querySelector("header nav ul");
-
-burguer.addEventListener("click", function(){
-    menu.classList.toggle("open");
-})
-  }
-
-
+// }
+// connectedCallback(){
+//   super.connectedCallback();
+//   //this.open();
+//   const burguer = this.querySelector("#burguer");
+//   console.log(burguer)
+  
+  
+// }
+// createRenderRoot() {
+//   return this;
+// }
+  
 
   render() {
     return html`
-      <header>
-        <nav>
-          <div class="burguer">
-            <div class="top-bar"></div>
-            <div class="middle-bar"></div>
-            <div class="bottom-bar"></div>
-          </div>
-          <ul>
-            <li><a  part="link1" href="/">${this.link1}</a></li>
-            <li><a href="/poses">${this.link2}</a></li>
-          </ul>
-        </nav>
-      </header>
+
+      
     `;
   }
 }

@@ -12,6 +12,29 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|gif)$/i,
+        type: 'asset/resource',
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "dirname/[contenthash].[ext]",
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'assets',
+          },
+        },
+        ],
+      },
+      {
         test: /\.css$/i,
 
         use: ['style-loader', 'css-loader']
