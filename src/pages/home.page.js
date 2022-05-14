@@ -34,8 +34,7 @@ export class HomePage extends LitElement {
         justify-content: center;
         align-items: center;
         text-align: center;
-  /*overflow-x: hidden;*/
-        //animation: tracking-in-expand 5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow-x: hidden;
         //animation: 5s fadeInWelcome;
       }
       .title {
@@ -101,18 +100,7 @@ export class HomePage extends LitElement {
           transform: translateY(0%);
         }
       }
-      @keyframes tracking-in-expand {
-        0% {
-          letter-spacing: -0.5em;
-          opacity: 0;
-        }
-        40% {
-          opacity: 0.6;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
+      
       @keyframes wiggle {
         0%,
         7% {

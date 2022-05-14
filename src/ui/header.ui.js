@@ -4,64 +4,76 @@ export class HeaderUI extends LitElement {
   static get styles() {
     return css`
       header {
-        width: 100%;
-        height: 100%;
-      }
-      header nav {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        width: 90%;
-        height: 3rem;
-        margin: 20px auto;
-      }
-      header nav ul {
-        display: flex;
-        flex-flow: row wrap;
-        gap: 1rem;
-        align-items: center;
-        width: 400px;
-        list-style: none;
-        cursor: pointer;
-        position: relative;
-        
-      }
-      /*header-mobile navigation*/
+  width: 100%;
+  height: 100%;
+}
+header nav {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 90%;
+  height: 3rem;
+  margin: 20px auto;
+}
+header nav ul {
+  font-size: var(--size-links-pages);
+  /* color: var(--color-primary); */
+  box-shadow: 10px 5px 5px white;
+  display: flex;
+  flex-flow: row-reverse;
+  gap: 1.5rem;
+  align-items: center;
+  width: 300px;
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  
+}
+/*header-mobile navigation*/
 
-      .burguer {
-        cursor: pointer;
-        display: none;
-      }
-      .burguer div {
-        margin: 4px;
-      }
-      .burguer .bar {
-        background-color: white;
-        width: 40px;
-        height: 3px;
-        border-radius: 5px;
-      }
+.burguer {
+  cursor: pointer;
+  display: none;
+}
+.burguer div {
+  margin: 4px;
+}
+.burguer .bar {
+  background-color: white;
+  width: 40px;
+  height: 3px;
+  border-radius: 5px;
+}
 
-      @media (max-width: 768px) {
-        .burguer {
-          display: block;
-        }
-        header nav ul {
-          flex-flow: column;
-          position: absolute;
-          top: 30px;
-          right: 0px;
-          width: 200px;
-          height: 6vh;
-          background: var(--color-secondary);
-          transition: transform 0.3s ease-in-out;
-          border-radius: 10px;
-          transform: translateX(100%);
-        }
-      }
-      .open {
-        transform: translateX(0%);
-      }
+@media (max-width: 400px) {
+  .burguer {
+    display: block;
+  }
+  header nav ul {
+    flex-flow: column wrap;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    width: 180px;
+    height: 20vh;
+    gap: 0rem;
+    background: var(--color-secondary);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 5em;
+    border: 2px solid white;
+    box-shadow: none;
+    transform: translateX(150%);
+    
+  }
+  header nav ul li{
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    /* color: var(--color-primary); */
+  }
+}
+.open {
+  transform: translateX(0%);
+} 
     `;
   }
 
@@ -106,8 +118,8 @@ export class HeaderUI extends LitElement {
             <div class="bar"></div>
           </div>
           <ul>
-            <li><a href="/">${this.link1}</a></li>
-            <li><a href="/poses">${this.link2}</a></li>
+          <li><a href="/poses">${this.link2}</a></li>
+          <li><a href="/">${this.link1}</a></li>
           </ul>
         </nav>
       </header>

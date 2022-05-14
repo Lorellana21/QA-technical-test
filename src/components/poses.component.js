@@ -1,5 +1,6 @@
 import { html, LitElement } from "lit";
 import { AllPosesUseCase } from "../usecases/all-poses.usecase";
+import "../ui/pose-card.ui";
 import '../ui/poses.ui';
 
 export class PosesComponent extends LitElement {
@@ -23,6 +24,7 @@ export class PosesComponent extends LitElement {
 
     render() {
         return html`
+        <pose-card></pose-card>
 
             <poses-ui .poses="${this.poses}"></poses-ui>
             
