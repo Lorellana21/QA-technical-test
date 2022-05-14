@@ -24,6 +24,7 @@ export class HeaderUI extends LitElement {
         list-style: none;
         cursor: pointer;
         position: relative;
+        
       }
       /*header-mobile navigation*/
 
@@ -88,6 +89,7 @@ export class HeaderUI extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+    this.firstUpdated();
   }
 
   createRenderRoot() {

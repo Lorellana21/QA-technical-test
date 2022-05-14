@@ -1,25 +1,27 @@
 /// <reference types="Cypress" />
 
-/*Namaste link*/
-it("user click Namaste link on home page", () => {
+it("click all links", () => {
 
-    // cy.get(':nth-child(2) > a') no lo encuentra
+    cy.visit("/")
 
-    cy.visit('/');
-})
+    //namaste page
+    cy.contains("Namasté").click()
+    cy.location('pathname').should('eq', '/')
 
-/*Yoga session link*/
-it("user click Yoga session link on home page", () => {
+    //yoga session page
+    cy.get(':nth-child(2) > a').click()
+    cy.location('pathname').should('eq', '/poses')
+    cy.go('back')
 
-    
-    cy.get(':nth-child(1) > a');
-    cy.wait(0);
-    cy.visit("/poses");
 })
 
 /*Go link*/
-/*no consigo seleccionarlo en cypress*/
+/*no lo encuentra*/
 // it("user clicks Go button on home page", () => {
 
-//     cy.visit("/poses");
+//     cy.visit('/');
+//     cy.get('home-page').shadow().find("a").click();
+    
+
 // })
+

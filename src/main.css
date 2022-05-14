@@ -57,12 +57,12 @@ html {
   background-position: top;
   background-size: cover;
   background-attachment: fixed; 
-  text-align: center;
+  /* text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: start;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: hidden; */
   /* background-color: var(--color-bg); */
   /*color: var(--color-fg);*/
 }
@@ -98,6 +98,7 @@ header nav ul {
   list-style: none;
   cursor: pointer;
   position: relative;
+  
 }
 /*header-mobile navigation*/
 
@@ -143,7 +144,7 @@ header nav ul {
 }
 .open {
   transform: translateX(0%);
-}
+} 
 
 /*---------------------reset----------------------------------------------*/
 

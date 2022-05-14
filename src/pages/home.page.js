@@ -2,6 +2,7 @@ import { html, css, LitElement } from "lit";
 
 
 
+
 export class HomePage extends LitElement {
   static get properties() {
     return {
@@ -27,11 +28,13 @@ export class HomePage extends LitElement {
       .namaste {
         display: flex;
         position: absolute;
-        width: 100%;
-        min-height: 80%;
+        width: 100vw;
+        min-height: 100vh;
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
+        text-align: center;
+  /*overflow-x: hidden;*/
         //animation: tracking-in-expand 5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         //animation: 5s fadeInWelcome;
       }
@@ -137,9 +140,14 @@ export class HomePage extends LitElement {
       }
     `;
   }
+  /*si le pongo esto me quita los estilos de aqui*/
+  // createRenderRoot() {
+  //   return this;
+  // }
 
   render() {
     return html`
+    
     
         <section class="namaste">
           <h1 class="title">${this.title}</h1>
