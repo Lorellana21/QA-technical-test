@@ -9,7 +9,7 @@ it("click all links", () => {
     cy.location('pathname').should('eq', '/')
 
     //yoga session page
-    cy.get(':nth-child(2) > a').click()
+    cy.get(':nth-child(1) > a').click()
     cy.location('pathname').should('eq', '/poses')
     cy.go('back')
 

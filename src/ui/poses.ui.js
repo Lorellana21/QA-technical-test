@@ -18,6 +18,7 @@ export class PosesUI extends LitElement {
   static get styles() {
     return css`
       .card__wrapper {
+        cursor: pointer;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -83,9 +84,7 @@ export class PosesUI extends LitElement {
         cursor: move;
         z-index: 10;
       }
-      .isFavorite {
-        background: yellow;
-      }
+      
       @keyframes tracking-in-expand {
         0% {
           letter-spacing: -0.5em;
@@ -98,17 +97,23 @@ export class PosesUI extends LitElement {
           opacity: 1;
         }
       }
-      .favorite{
-        background-color: yellow;
+      .isFavorite {
+        border: solid 5px yellow;
       }
     `;
   }
 
   firstUpdated() {
-    const allCards = this.querySelectorAll(".highlight");
+    const allCards = this.querySelectorAll(".card__wrapper");
+    const img = this.querySelector(".highlight__figure");
+    
+    
+    
     for (const card of allCards) {
-      card.addEventListener("click", function () {
-        card.classList.toggle("favorite");
+      console.log(card)
+      
+      card.addEventListener("click", (event) => {
+        img.classList.toggle("isFavorite");
       });
     }
     
@@ -117,6 +122,7 @@ export class PosesUI extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.firstUpdated();
+    
   }
   
 
@@ -132,7 +138,7 @@ export class PosesUI extends LitElement {
                   <h2 class="title size--l">${pose.sanskrit_name}</h2>
                   <p class="subtitle size--m">${pose.english_name}</p>
                 </header>
-                <figure class="highlight__figure">
+                <figure class="highlight__figure ">
                   <img
                     class="highlight__img"
                     loading="lazy"

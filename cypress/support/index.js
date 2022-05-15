@@ -16,6 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
@@ -24,3 +25,5 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // failing the test
     return false
   })
+
+import '@cypress/code-coverage/support'
