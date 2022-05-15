@@ -10,11 +10,5 @@ import "./components/poses.component";
 
 
 
-// const burguer = document.querySelector(".burguer");
-// console.log(burguer);
-// const menu = document.querySelector("header nav ul");
 
-// burguer.addEventListener("click", function(){
-//     menu.classList.toggle("open");
-// })
   

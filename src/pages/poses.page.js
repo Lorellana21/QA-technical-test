@@ -13,18 +13,20 @@ export class PosesPage extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: block;
-        min-height: 100%;
+        width:100%;
+            display: flex;
+            flex-direction: column;
       }
       .main-content {
-        display: flex;
-        //position: absolute;
-        width: 100%;
-        min-height: 80%;
-        flex-flow: column wrap;
-        justify-content: start;
-        align-items: center;
-        padding: 2rem;
+        text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+        column-gap: 20px;
+        justify-content: space-between;
+        /* align-content: flex-start;
+    justify-content: start; */
+    min-height: 100vh;
+    padding: 2rem;
       }
     `;
   }

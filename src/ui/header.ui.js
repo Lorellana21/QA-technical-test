@@ -92,7 +92,6 @@ header nav ul {
 
   firstUpdated() {
     const burguer = this.querySelector(".burguer");
-    console.log(burguer);
     const menu = this.querySelector("header nav ul");
     burguer.addEventListener("click", function () {
       menu.classList.toggle("open");
