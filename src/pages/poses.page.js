@@ -30,7 +30,7 @@ export class PosesPage extends LitElement {
 
   render() {
     return html`
-    <section class="main-content" data-cy="main-content">
+    <section class="main-content" id="main-content">
       <genk-poses></genk-poses>
   </section>
       `;

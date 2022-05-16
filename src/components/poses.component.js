@@ -1,6 +1,8 @@
 import { css, html, LitElement } from "lit";
 import { AllPosesUseCase } from "../usecases/all-poses.usecase";
 import "../ui/poses.ui";
+import { FilterPosesUseCase } from "../usecases/filter-poses.usecase";
+
 
 export class PosesComponent extends LitElement {
   static get properties() {
@@ -24,13 +26,14 @@ export class PosesComponent extends LitElement {
     return css`
       :host {
         width: 100%;
-        display: flex;
+         display: flex;
         flex-direction: row;
       }
       .filter {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-flow: column wrap;
+    /* justify-content: space-between;
+    align-items: center; */
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid #eee;
@@ -38,7 +41,7 @@ export class PosesComponent extends LitElement {
 
     .filter__title {
         font-size: 1.5rem;
-        color: #a349a4;
+        color: var(--color-primary);
     }
 
     .filter__search {
@@ -61,14 +64,20 @@ export class PosesComponent extends LitElement {
         }
       .poses__list{
         display: flex;
+        flex-flow: row wrap;
+        align-content: flex-start;
         justify-content: space-between;
-        flex-wrap: wrap;
       }
       .favorites{
         width: 60%;
         height: auto;
         border: solid 4px white;
         margin-left: 2rem;
+      }
+      .favorites__title{
+        font-size: 1.5rem;
+        color: var(--color-primary);
+
       }
     `;
   }
@@ -77,31 +86,55 @@ export class PosesComponent extends LitElement {
     super.connectedCallback();
     const allPosesUseCase = new AllPosesUseCase();
     this.poses = await allPosesUseCase.execute();
+    this.firstUpdated();
   }
+  
+  //intento con firstupdated
+  // firstUpdated(){
+  //   const searchText = this.querySelector("#searchText").value;
+  //   console.log("hola");
+  //   const filterPosesUseCase = new FilterPosesUseCase();
+  //   this.poses = filterPosesUseCase.execute(this.poses, searchText)
+
+  // }
+  
+  searchPoses(){
+    // console.log("hola");
+    const searchText = this.shadowRoot.querySelector("#searchText").value;
+    const filterPosesUseCase = new FilterPosesUseCase();
+    this.poses = filterPosesUseCase.execute(this.poses, searchText)
+    
+  }
+//no tiene que ser asincrono
+  // async searchPoses(){
+  //   const searchText = this.shadowRoot.querySelector("#searchText").value;
+  //   const filterPosesUseCase = new FilterPosesUseCase();
+  //   this.poses = await filterPosesUseCase.execute(this.poses, searchText)
+  // }
 
   render() {
     return html` 
-    <section className="filter">
-      <h2 className="filter__title">${this.title}</h2>
-      <form>
+    <section class="filter">
+      <h2 class="filter__title">${this.title}</h2>
+      <article>
         <input
-          className="filter__search"
+          class="filter__search"
           autoComplete="off"
-          type="search"
-          id="search"
+          type="text"
+          id="searchText"
+          aria-label="Filter Input"
           name="search"
           placeholder=${this.placeholder}
-          onChange={handleInput}
-        />
-      </form>
+        >
+        <button aria-label="Search Poses" @click="${this.searchPoses}">Refresh</button>
+  </article>
   </section>
   <section class="poses__list">
   <poses-ui .poses="${this.poses}"></poses-ui> 
   
   </section>
   <section class="favorites">
-  <h2 className="favorites__title">${this.favoriteTitle}</h2>
-
+  <h2 class="favorites__title">${this.favoriteTitle}</h2>
   </section>
   `;
         

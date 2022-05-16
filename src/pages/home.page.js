@@ -4,6 +4,7 @@ import { html, css, LitElement } from "lit";
 
 
 export class HomePage extends LitElement {
+
   static get properties() {
     return {
       title: { type: String },
@@ -15,7 +16,7 @@ export class HomePage extends LitElement {
   constructor() {
     super();
     this.title = "Yoga Wizard";
-    this.subtitle = "creating my yoga session";
+    this.subtitle = "creates my yoga session";
     this.textButton = "Go";
   }
 
@@ -46,7 +47,7 @@ export class HomePage extends LitElement {
       .subtitle {
         position: relative;
         font-size: var(--size-subtitle);
-        color: var(--color-secondary);
+        color: var(--color-audio);
         float: right;
         top: -0.5em;
         right: 0.1em;
@@ -137,8 +138,6 @@ export class HomePage extends LitElement {
 
   render() {
     return html`
-    
-    
         <section class="home-page">
           <h1 class="title">${this.title}</h1>
           <p class="subtitle">${this.subtitle}</p>

@@ -17,7 +17,6 @@ header nav {
 }
 header nav ul {
   font-size: var(--size-links-pages);
-  /* color: var(--color-primary); */
   box-shadow: 10px 5px 5px white;
   display: flex;
   flex-flow: row-reverse;
@@ -28,6 +27,12 @@ header nav ul {
   cursor: pointer;
   position: relative;
   
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: violet;
 }
 /*header-mobile navigation*/
 
@@ -57,7 +62,7 @@ header nav ul {
     width: 180px;
     height: 20vh;
     gap: 0rem;
-    background: var(--color-secondary);
+    background: var(--color-audio);
     transition: transform 0.3s ease-in-out;
     border-radius: 5em;
     border: 2px solid white;
@@ -68,7 +73,6 @@ header nav ul {
   header nav ul li{
     margin-top: 2.5rem;
     font-size: 1.5rem;
-    /* color: var(--color-primary); */
   }
 }
 .open {

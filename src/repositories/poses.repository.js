@@ -3,8 +3,6 @@ import axios from "axios";
 
 export class PosesRepository {
 
-    
-    
 
     async getAllPoses() {
         return await (

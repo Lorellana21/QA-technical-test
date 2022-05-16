@@ -114,8 +114,8 @@ export class PosesUI extends LitElement {
   firstUpdated() {
     const allCards = this.shadowRoot.querySelectorAll(".card__wrapper");
     for (const card of allCards) {
-      console.log(card)
       card.addEventListener("click", (event) => {
+        // console.log(card)
         card.classList.toggle("isFavorite");
       });
     }
