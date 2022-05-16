@@ -4,6 +4,7 @@ import { css, html, LitElement } from "lit";
 
 
 export class PosesUI extends LitElement {
+
   static get properties() {
     return {
       poses: {
@@ -12,16 +13,23 @@ export class PosesUI extends LitElement {
       id: { type: Number },
       english_name: { type: String },
       sanskrit_name: { type: String },
-      img_url: { type: String },
+      img_url: { type: String }
     };
   }
+  
   static get styles() {
     return css`
+    :host {
+        display: block;
+        width: 100%;
+      }
+      
       .card__wrapper {
         cursor: pointer;
         display: flex;
-        flex-wrap: wrap;
+        flex-flow: column wrap;
         justify-content: center;
+        align-items: center;
         margin: 0 auto;
         border: solid white 2px;
         border-radius: 2rem;
@@ -104,29 +112,25 @@ export class PosesUI extends LitElement {
   }
 
   firstUpdated() {
-    const allCards = this.querySelectorAll(".card__wrapper");
-    const img = this.querySelector(".highlight__figure");
-    
-    
-    
+    const allCards = this.shadowRoot.querySelectorAll(".card__wrapper");
     for (const card of allCards) {
       console.log(card)
-      
       card.addEventListener("click", (event) => {
-        img.classList.toggle("isFavorite");
+        card.classList.toggle("isFavorite");
       });
     }
-    
   }
   
   connectedCallback() {
     super.connectedCallback();
     this.firstUpdated();
-    
   }
+
+  
   
 
   render() {
+
     return html`
       <ul id="poses">
         ${this.poses.items &&
@@ -138,7 +142,7 @@ export class PosesUI extends LitElement {
                   <h2 class="title size--l">${pose.sanskrit_name}</h2>
                   <p class="subtitle size--m">${pose.english_name}</p>
                 </header>
-                <figure class="highlight__figure ">
+                <figure class="highlight__figure">
                   <img
                     class="highlight__img"
                     loading="lazy"

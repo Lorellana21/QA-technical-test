@@ -10,31 +10,22 @@ export class PosesComponent extends LitElement {
         state: true,
       },
       title: { type: String },
-      placeholder: { type: String }
+      placeholder: { type: String },
+      favoriteTitle: { type: String}
     };
   }
   constructor() {
     super();
     this.title = "My list of poses";
     this.placeholder = "Filter by name";
+    this.favoriteTitle = "My Yoga session";
   }
   static get styles() {
     return css`
       :host {
         width: 100%;
         display: flex;
-        flex-direction: column;
-      }
-      .main-content {
-        text-align: center;
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 20px;
-        justify-content: space-between;
-        /* align-content: flex-start;
-        justify-content: start; */
-        min-height: 100vh;
-        padding: 2rem;
+        flex-direction: row;
       }
       .filter {
     display: flex;
@@ -68,6 +59,17 @@ export class PosesComponent extends LitElement {
     .filter__search::placeholder {
             font-size: 0.9rem;
         }
+      .poses__list{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .favorites{
+        width: 60%;
+        height: auto;
+        border: solid 4px white;
+        margin-left: 2rem;
+      }
     `;
   }
 
@@ -80,7 +82,7 @@ export class PosesComponent extends LitElement {
   render() {
     return html` 
     <section className="filter">
-      <h1 className="filter__title">${this.title}</h1>
+      <h2 className="filter__title">${this.title}</h2>
       <form>
         <input
           className="filter__search"
@@ -95,14 +97,20 @@ export class PosesComponent extends LitElement {
   </section>
   <section class="poses__list">
   <poses-ui .poses="${this.poses}"></poses-ui> 
+  
+  </section>
+  <section class="favorites">
+  <h2 className="favorites__title">${this.favoriteTitle}</h2>
+
   </section>
   `;
         
   }
 
-//   createRenderRoot() {
-//     return this;
-//   }
+  // createRenderRoot() {
+  //   return this;
+  // }
+
 }
 
 customElements.define("genk-poses", PosesComponent);

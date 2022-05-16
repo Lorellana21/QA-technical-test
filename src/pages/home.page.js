@@ -23,9 +23,11 @@ export class HomePage extends LitElement {
     return css`
       :host {
         display: block;
+        width: 100%;
         min-height: 100%;
+        overflow: hidden; 
       }
-      .namaste {
+      .home-page {
         display: flex;
         position: absolute;
         width: 100vw;
@@ -34,7 +36,7 @@ export class HomePage extends LitElement {
         justify-content: center;
         align-items: center;
         text-align: center;
-  overflow-x: hidden;
+        
         //animation: 5s fadeInWelcome;
       }
       .title {
@@ -137,7 +139,7 @@ export class HomePage extends LitElement {
     return html`
     
     
-        <section class="namaste">
+        <section class="home-page">
           <h1 class="title">${this.title}</h1>
           <p class="subtitle">${this.subtitle}</p>
           <a
