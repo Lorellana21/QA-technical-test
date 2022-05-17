@@ -35,7 +35,7 @@ export class PosesUI extends LitElement {
         width: 200px;
         height: auto;
         box-shadow: 0 5px 15px 0px rgba(14, 197, 23, 0.4);
-        //animation: tracking-in-expand 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        animation: tracking-in-expand 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
       .subtitle {
         font-weight: 600;
@@ -79,7 +79,6 @@ export class PosesUI extends LitElement {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        /* order: -1; */
         padding: 1rem 0;
         border-bottom: 1px solid grey;
       }
@@ -111,7 +110,6 @@ export class PosesUI extends LitElement {
     const allCards = this.shadowRoot.querySelectorAll(".card__wrapper");
     for (const card of allCards) {
       card.addEventListener("click", (event) => {
-        // console.log(card)
         card.classList.toggle("isFavorite");
       });
     }

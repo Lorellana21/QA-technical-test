@@ -1,0 +1,5 @@
+node_modules
+*.log
+.gitlab-ci.yml
+Dockerfile
+data

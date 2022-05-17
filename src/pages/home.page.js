@@ -19,10 +19,6 @@ export class HomePage extends LitElement {
   connectedCallback() {
     super.connectedCallback();
   }
-  /*si le pongo esto me quita los estilos de aqui*/
-  // createRenderRoot() {
-  //   return this;
-  // }
 
   static get styles() {
     return css`
@@ -39,7 +35,7 @@ export class HomePage extends LitElement {
         justify-content: center;
         align-items: center;
         text-align: center;
-        //animation: 5s fadeInWelcome;
+        animation: 5s fadeInWelcome;
       }
       .title {
         font-size: var(--size-title);
@@ -47,23 +43,23 @@ export class HomePage extends LitElement {
       }
       .subtitle {
         position: relative;
+        font-weight: 600;
         font-size: var(--size-subtitle);
-        color: var(--color-audio);
-        /* float: right; */
+        color: var(--color-bg);
         top: -0.5em;
         right: 0.1em;
-        //animation: 5s bounceMove infinite;
+        animation: 5s bounceMove infinite;
       }
       .start-button {
         display: block;
         font-size: var(--size-button-text);
         font-weight: bold;
-        color: var(--color-tertiary);
+        color: var(--color-bg);
+        background-color: var(--color-primary-light);
         text-align: center;
         width: 4em;
         padding: 0.5em;
         text-decoration: none;
-        border: solid 0.4em #000;
         border-radius: 5em;
         transition: all 0.5s;
         cursor: pointer;

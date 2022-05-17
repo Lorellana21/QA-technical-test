@@ -24,6 +24,7 @@
     --color-fg: #ffffff;
     --color-primary: hsl(0, 0%, 100%);
     --color-primary-light: #7790fe;
+    --color-secondary-links: hsl(300, 76%, 72%);
     --color-primary-dark: #363895;
     --color-primary-dark-extra: #232458;
     --color-secondary: hsla(341, 59%, 50%, 1);
@@ -60,11 +61,7 @@ html {
   background-attachment: fixed;
 }
 
-/* .container {
-  display: block;
-  width: 100%;
-  min-height: 100vh;
-} */
+
 
 .header {
   width: 100%;
@@ -85,12 +82,12 @@ html {
 header nav ul {
   font-size: var(--size-links-pages);
   color: var(--color-primary);
-  box-shadow: 10px 5px 5px white;
+  box-shadow: 10px 5px 5px var(--color-primary);
   display: flex;
   flex-flow: row-reverse;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: center;
-  width: 300px;
+  width: 320px;
   cursor: pointer;
   position: relative;
   list-style-type: none;
@@ -99,7 +96,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: violet;
+  color: var(--color-secondary-links);
 }
 
 /*header-mobile navigation*/
@@ -113,7 +110,7 @@ a:hover {
   padding: 5px 5px 1px 1px;
 }
 .burguer .bar {
-  background-color: white;
+  background-color: var(--color-primary);
   width: 40px;
   height: 3px;
   border-radius: 5px;
@@ -127,15 +124,14 @@ a:hover {
     flex-flow: column wrap;
     position: absolute;
     padding: 0.2em 0.2em;
-    background: var(--color-audio);
+    background: var(--color-primary-light);
     transition: transform 0.3s ease-in-out;
     border-radius: 5em;
-    border: 2px solid white;
+    border: 2px solid var(--color-secondary-links);
     box-shadow: none;
     transform: translateX(150%);
   }
   header nav ul li {
-    /* margin-top: 2.5rem; */
     font-size: 1.5rem;
     color: var(--color-primary);
   }
@@ -144,4 +140,6 @@ a:hover {
   transform: translateX(0%);
 }
 
-/*---------------------reset----------------------------------------------*/
+
+
+

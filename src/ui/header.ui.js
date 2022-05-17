@@ -1,7 +1,6 @@
 import { css, html, LitElement } from "lit-element";
 
 export class HeaderUI extends LitElement {
-
   static get properties() {
     return {
       link1: { type: String },
@@ -18,6 +17,10 @@ export class HeaderUI extends LitElement {
       header {
         width: 100%;
         height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
       }
       header nav {
         display: flex;
@@ -29,37 +32,41 @@ export class HeaderUI extends LitElement {
       }
       header nav ul {
         font-size: var(--size-links-pages);
-        box-shadow: 10px 5px 5px white;
+        color: var(--color-primary);
+        box-shadow: 10px 5px 5px var(--color-primary);
         display: flex;
         flex-flow: row-reverse;
-        gap: 1.5rem;
+        gap: 1rem;
         align-items: center;
-        width: 300px;
-        list-style: none;
+        width: 320px;
         cursor: pointer;
         position: relative;
+        list-style-type: none;
       }
       a {
         text-decoration: none;
       }
       a:hover {
-        color: violet;
+        color: var(--color-secondary-links);
       }
-      /*mobile*/
+
+      /*header-mobile navigation*/
 
       .burguer {
         cursor: pointer;
         display: none;
       }
       .burguer div {
-        margin: 4px;
+        margin: 10px;
+        padding: 5px 5px 1px 1px;
       }
       .burguer .bar {
-        background-color: var(--color-fg);
+        background-color: var(--color-primary);
         width: 40px;
         height: 3px;
         border-radius: 5px;
       }
+
       @media (max-width: 400px) {
         .burguer {
           display: block;
@@ -67,21 +74,17 @@ export class HeaderUI extends LitElement {
         header nav ul {
           flex-flow: column wrap;
           position: absolute;
-          top: 10px;
-          right: 25px;
-          width: 180px;
-          height: 20vh;
-          gap: 0rem;
-          background: var(--color-audio);
+          padding: 0.2em 0.2em;
+          background: var(--color-primary-light);
           transition: transform 0.3s ease-in-out;
           border-radius: 5em;
-          border: 2px solid white;
+          border: 2px solid var(--color-secondary-links);
           box-shadow: none;
           transform: translateX(150%);
         }
         header nav ul li {
-          margin-top: 2.5rem;
           font-size: 1.5rem;
+          color: var(--color-primary);
         }
       }
       .open {
