@@ -24,9 +24,9 @@ export class PosesPage extends LitElement {
     `    ;
   }
 
-//   createRenderRoot() {
-//     return this;
-// }
+  createRenderRoot() {
+    return this;
+}
 
   render() {
     return html`

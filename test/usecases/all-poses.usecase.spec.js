@@ -23,7 +23,7 @@ describe('All poses Use Case', () => {
         const useCase = new AllPosesUseCase();
         const poses = await useCase.execute();
 
-        expect(poses.items).toHaveLength(48);
+        expect(poses).toHaveLength(48);
 
     })
 

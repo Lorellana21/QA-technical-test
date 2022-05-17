@@ -1,8 +1,6 @@
 import { html, css, LitElement } from "lit";
 
 
-
-
 export class HomePage extends LitElement {
 
   static get properties() {
@@ -12,20 +10,24 @@ export class HomePage extends LitElement {
       textButton: { type: String },
     };
   }
-
   constructor() {
     super();
     this.title = "Yoga Wizard";
     this.subtitle = "creates my yoga session";
     this.textButton = "Go";
   }
+  connectedCallback() {
+    super.connectedCallback();
+  }
+  /*si le pongo esto me quita los estilos de aqui*/
+  // createRenderRoot() {
+  //   return this;
+  // }
 
   static get styles() {
     return css`
       :host {
         display: block;
-        width: 100%;
-        min-height: 100%;
         overflow: hidden; 
       }
       .home-page {
@@ -37,7 +39,6 @@ export class HomePage extends LitElement {
         justify-content: center;
         align-items: center;
         text-align: center;
-        
         //animation: 5s fadeInWelcome;
       }
       .title {
@@ -48,23 +49,21 @@ export class HomePage extends LitElement {
         position: relative;
         font-size: var(--size-subtitle);
         color: var(--color-audio);
-        float: right;
+        /* float: right; */
         top: -0.5em;
         right: 0.1em;
-        //margin-bottom: -0.3em;
         //animation: 5s bounceMove infinite;
       }
       .start-button {
         display: block;
-        font-size: 1.2em;
+        font-size: var(--size-button-text);
         font-weight: bold;
         color: var(--color-tertiary);
         text-align: center;
         width: 4em;
         padding: 0.5em;
-        border: 0;
         text-decoration: none;
-        border: solid 0.2em #000;
+        border: solid 0.4em #000;
         border-radius: 5em;
         transition: all 0.5s;
         cursor: pointer;
@@ -83,7 +82,7 @@ export class HomePage extends LitElement {
         margin-left: 0;
         opacity: 1;
       }
-      /*animations*/
+      
       @keyframes bounceMove {
         0% {
           transform: rotate(10deg);
@@ -103,7 +102,6 @@ export class HomePage extends LitElement {
           transform: translateY(0%);
         }
       }
-      
       @keyframes wiggle {
         0%,
         7% {
@@ -131,10 +129,6 @@ export class HomePage extends LitElement {
       }
     `;
   }
-  /*si le pongo esto me quita los estilos de aqui*/
-  // createRenderRoot() {
-  //   return this;
-  // }
 
   render() {
     return html`
@@ -144,18 +138,11 @@ export class HomePage extends LitElement {
           <a
             class="start-button"
             id="start-button"
-            data-cy="start-button-enter"
             href="/poses"
             >${this.textButton}</a
           >
         </section>
     `;
   }
-
-  connectedCallback() {
-    super.connectedCallback();
-  }
-
 }
-
 customElements.define("home-page", HomePage);

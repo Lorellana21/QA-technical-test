@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap");
 
-@media (prefers-color-scheme: light) {
+
   :root {
     font-size: 16px;
     /*============
@@ -9,26 +9,29 @@
     --size-title: 3rem;
     --size-subtitle: 2rem;
     --size-links-pages: 1.5rem;
-    /*=====
+    --size-button-text: 1.2rem;
+    /*=============
     Fonts
-    =====*/
+    ==============*/
     --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     --font-titles: "Ubuntu", sans-serif;
-
     /*============
     Main colours
     ============*/
+    --color-basic-positive: hsl(174, 34%, 71%);
     --color-bg: #000000;
     --color-fg: #ffffff;
     --color-primary: hsl(0, 0%, 100%);
+    --color-primary-light: #7790fe;
+    --color-primary-dark: #363895;
+    --color-primary-dark-extra: #232458;
     --color-secondary: hsla(341, 59%, 50%, 1);
     --color-tertiary: hsl(39, 100%, 50%);
 
     /*===============
     Other colors
     ===============*/
-    --color-strength: hsl(174, 34%, 71%);
     --color-balance: hsl(259, 25%, 48%);
     --color-breathe: hsl(6, 60%, 50%);
     --color-stretching: hsl(39, 93%, 70%);
@@ -36,7 +39,6 @@
     --color-audio: hsl(3, 75%, 65%);
     --color-relaxation: hsl(263, 29%, 63%);
   }
-}
 
 *,
 *::after,
@@ -44,7 +46,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
 }
 
 body,
@@ -56,14 +57,14 @@ html {
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
-  background-attachment: fixed; 
+  background-attachment: fixed;
 }
 
-.container {
+/* .container {
   display: block;
   width: 100%;
   min-height: 100vh;
-}
+} */
 
 .header {
   width: 100%;
@@ -80,7 +81,6 @@ html {
   width: 90%;
   height: 3rem;
   margin: 20px auto;
-  
 }
 header nav ul {
   font-size: var(--size-links-pages);
@@ -144,10 +144,4 @@ a:hover {
   transform: translateX(0%);
 }
 
-
-
-
-
-
 /*---------------------reset----------------------------------------------*/
-

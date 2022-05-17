@@ -1,29 +1,28 @@
 import { css, html, LitElement } from "lit";
 
-
-
-
 export class PosesUI extends LitElement {
-
   static get properties() {
     return {
       poses: {
-        type: Object,
+        type: Array,
       },
       id: { type: Number },
       english_name: { type: String },
       sanskrit_name: { type: String },
-      img_url: { type: String }
+      img_url: { type: String },
     };
   }
-  
+  // createRenderRoot() {
+  //   return this;
+  // }
+
   static get styles() {
     return css`
-    :host {
+      :host {
         display: block;
         width: 100%;
       }
-      
+
       .card__wrapper {
         cursor: pointer;
         display: flex;
@@ -37,12 +36,11 @@ export class PosesUI extends LitElement {
         height: auto;
         box-shadow: 0 5px 15px 0px rgba(14, 197, 23, 0.4);
         //animation: tracking-in-expand 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
       }
       .subtitle {
         font-weight: 600;
         padding: 0.5rem 0;
-        color: white;
+        color: var(--color-primary);
         margin-bottom: -1rem;
       }
       .size--l {
@@ -67,7 +65,6 @@ export class PosesUI extends LitElement {
         display: flex;
         flex-direction: column-reverse;
       }
-
       .highlight__figure {
         position: relative;
       }
@@ -88,11 +85,14 @@ export class PosesUI extends LitElement {
       }
 
       .highlight__author {
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         cursor: move;
         z-index: 10;
+        color: var(--color-primary);
       }
-      
+      .isFavorite {
+        border: solid 5px var(--color-tertiary);
+      }
       @keyframes tracking-in-expand {
         0% {
           letter-spacing: -0.5em;
@@ -105,12 +105,8 @@ export class PosesUI extends LitElement {
           opacity: 1;
         }
       }
-      .isFavorite {
-        border: solid 5px yellow;
-      }
     `;
   }
-
   firstUpdated() {
     const allCards = this.shadowRoot.querySelectorAll(".card__wrapper");
     for (const card of allCards) {
@@ -120,23 +116,17 @@ export class PosesUI extends LitElement {
       });
     }
   }
-  
   connectedCallback() {
     super.connectedCallback();
     this.firstUpdated();
   }
-
-  
-  
-
   render() {
-
     return html`
       <ul id="poses">
-        ${this.poses.items &&
-        this.poses.items.map(
+        ${this.poses &&
+        this.poses.map(
           (pose) => html`
-            <div  class="card__wrapper">
+            <div class="card__wrapper">
               <li id="pose_${pose.id}" class="highlight">
                 <header class="highlight__header">
                   <h2 class="title size--l">${pose.sanskrit_name}</h2>
@@ -152,20 +142,15 @@ export class PosesUI extends LitElement {
                 </figure>
                 <footer class="highlight__footer">
                   <address class="highlight__author size--m">
-                  ${pose.id}
+                    ${pose.id}
                   </address>
                 </footer>
-        </li>
+              </li>
             </div>
           `
         )}
       </ul>
     `;
   }
-
-  // createRenderRoot() {
-  //   return this;
-  // }
 }
-
 customElements.define("poses-ui", PosesUI);
