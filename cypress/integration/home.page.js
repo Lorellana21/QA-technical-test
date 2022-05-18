@@ -20,7 +20,7 @@ it("click all links", () => {
 // it("user clicks Go button on home page", () => {
 
 //     cy.visit('/');
-//     cy.get('home-page').shadow().find("a").click();
+//     cy.get('home-page').shadow().find("#start-button").click();
     
 
 // })

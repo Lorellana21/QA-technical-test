@@ -64,6 +64,8 @@ export class PosesUI extends LitElement {
       .highlight__header {
         display: flex;
         flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
       }
       .highlight__figure {
         position: relative;
