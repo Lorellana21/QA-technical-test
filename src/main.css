@@ -61,7 +61,9 @@ html {
   background-attachment: fixed;
 }
 
-
+/*----------------------------------------------
+                  HEADER-UI
+-----------------------------------------------*/
 
 .header {
   width: 100%;
@@ -99,7 +101,7 @@ a:hover {
   color: var(--color-secondary-links);
 }
 
-/*header-mobile navigation*/
+/*mobile navigation*/
 
 .burguer {
   cursor: pointer;
