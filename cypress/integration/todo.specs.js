@@ -7,24 +7,24 @@ describe("VanillaJS TodoMVC", () => {
 
   // funcionalidad de añadir un todo
   it("adds a single todo", () => {
-    cy.get(".new-todo").type("Buy Milk{enter}");
+    cy.get(".new-todo").type("perform the technical test{enter}");
     cy.get(".todo-list li").should("have.length", 1);
   });
 
   it("adds three todos", () => {
-    cy.get(".new-todo").type("Buy Milk{enter}");
-    cy.get(".new-todo").type("Pay Rent{enter}");
-    cy.get(".new-todo").type("Pickup Dry Cleaning{enter}");
+    cy.get(".new-todo").type("perform the technical test{enter}");
+    cy.get(".new-todo").type("upload the repository to Github{enter}");
+    cy.get(".new-todo").type("send email to Manu with link to repository{enter}");
     cy.get(".todo-list li").should("have.length", 3)
   });
 
   it("todos render the correct text within the app", () => {
-    cy.get(".new-todo").type("Buy Milk{enter}");
-    cy.get(".new-todo").type("Pay Rent{enter}");
-    cy.get(".new-todo").type("Pickup Dry Cleaning{enter}");
-    cy.get(".todo-list li").eq(0).find("label").should("contain", "Buy Milk")
-    cy.get(".todo-list li").eq(1).find("label").should("contain", "Pay Rent")
-    cy.get(".todo-list li").eq(2).find("label").should("contain", "Pickup Dry Cleaning")
+    cy.get(".new-todo").type("perform the technical test{enter}");
+    cy.get(".new-todo").type("upload the repository to Github{enter}");
+    cy.get(".new-todo").type("send email to Manu with link to repository{enter}");
+    cy.get(".todo-list li").eq(0).find("label").should("contain", "perform the technical test")
+    cy.get(".todo-list li").eq(1).find("label").should("contain", "upload the repository to Github")
+    cy.get(".todo-list li").eq(2).find("label").should("contain", "send email to Manu with link to repository")
   })
 
   it("does NOT display the footer or todo-list when there are no todos", () => {
@@ -33,8 +33,8 @@ describe("VanillaJS TodoMVC", () => {
   })
 
   //funcionalidad de completar un to-do
-  it("when the item is completed, it gets a different class", () => {
-    cy.get(".new-todo").type("Buy Milk{enter}");
+  it("when the todo is completed, it gets a different class", () => {
+    cy.get(".new-todo").type("perform the technical test{enter}");
     cy.get('.toggle').click();
     cy.get(".todo-list li.completed").should("exist");
   })
