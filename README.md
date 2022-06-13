@@ -1,7 +1,7 @@
 # technical-test
 
 Hello!
-This is a technical-test to show my skills as a Junior QA Engineer for Bdeo, as they are growing the QA team 💪
+This is a technical-test to show my skills as a Junior QA Engineer for a very important company that is increasing its QA team 💪
 
 The test consists of accessing this [page](https://todomvc.com/examples/vanillajs/#/) and
 write automatic tests to test:

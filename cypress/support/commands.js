@@ -25,3 +25,10 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import "@testing-library/cypress/add-commands";
+
+Cypress.Commands.add("createDefaultTodos", () => {
+    const TODO_ITEM_ONE = "perform the technical test"
+  const TODO_ITEM_TWO = "upload the repository to Github"
+  const TODO_ITEM_THREE = "send email to Manu with link to repository"
+  })
+  
