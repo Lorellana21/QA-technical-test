@@ -83,7 +83,9 @@ To carry out the task, I have prepared a small *test plan* intended to serve as 
 
 🔹 Clone this project.
 
-🔹 Run the command`npm run test` to run the tests and see the coverage.
+🔹 Install Cypres with `npm install --save-dev cypress`
+
+🔹 Run the command`npm run test:all` to run the tests and see the coverage.
 
 🔹 Run the command `npm run cy:open`if you want to rely on the visual tool: 
 
