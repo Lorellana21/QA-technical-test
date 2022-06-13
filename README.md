@@ -10,6 +10,7 @@ write automatic tests to test:
 - The filters of to-do's (active / completed / all)
 
 
+
 ## TESTING PLAN
 
 To carry out the task, I have prepared a small *test plan* intended to serve as a guide for the tests.
@@ -76,17 +77,25 @@ To carry out the task, I have prepared a small *test plan* intended to serve as 
     - output: the list is empty and the input "new-todo" must be visible
 
 
+
+
 ## How to get the project started
 
-    Clone this project.
+🔹 Clone this project.
 
-    Run the command *npm run test:all* to run the tests and see the coverage.
+🔹 Run the command`npm run test` to run the tests and see the coverage.
 
-    Run the command *npm run cy:open* if you want to rely on the visual tool: 
+🔹 Run the command `npm run cy:open`if you want to rely on the visual tool: 
 
-        The tool opens, but you must be sure that the server is running (use *npm run start* in other terminal). Then click the "todo.specs.js" and...
+the tool opens, but you must be sure that the server is running (use `npm run start` in other terminal). 
+
+Then click the "todo.specs.js" and...
+    
+    
+    
+    
         
-          **ENJOY, IT IS MAGIC!**
+                                                 **ENJOY, IT IS MAGIC!**
         
         
         
