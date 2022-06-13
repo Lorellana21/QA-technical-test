@@ -10,8 +10,9 @@ write automatic tests to test:
 - The filters of to-do's (active / completed / all)
 
 
-
 ## TESTING PLAN
+
+To carry out the task, I have prepared a small *test plan* intended to serve as a guide for the tests.
 
 
 #### **Functionality of adding a to-do**
@@ -47,10 +48,48 @@ write automatic tests to test:
 
     - input: introduce a to-do and mark as completed,
     
-    - output: the class "completed" appears in the li(to-do) clicked
+    - output: the class "completed" appears in the li(to-do) clicked.
     
 
 #### **Filters of to-do's (active / completed / all)**
+
+6. *Flow of typing 3 to-dos, mark one as completed and see what the filters show*:
+
+    6.1
+    - input: add 1 todo and mark as completed,
+    - output: the to-do is crossed out.
+
+    6.2
+    - input: add other 2 to-dos and click the "All" filter,
+    - output: the 3 to-dos are visible, the filter "All" is selected, and the counter must contain: "2 items left".
+
+    6.3
+    - input: click the "Active" filter,
+    - output: 2 items are visible (not completed).
+
+    6.4
+    - input: click the "Completed" filter,
+    - output: the list has just one item and the counter is still saying: "2 items left".
+
+    6.5
+    - input: click the "Clear completed" filter,
+    - output: the list is empty and the input "new-todo" must be visible
+
+
+## How to get the project started
+
+    Clone this project.
+
+    Run the command *npm run test:all* to run the tests and see the coverage.
+
+    Run the command *npm run cy:open* if you want to rely on the visual tool: 
+
+        The tool opens, but you must be sure that the server is running (use *npm run start* in other terminal). Then click the "todo.specs.js" and...
+        
+          **ENJOY, IT IS MAGIC!**
+        
+        
+        
 
 
 
